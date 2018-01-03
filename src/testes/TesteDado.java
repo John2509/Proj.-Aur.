@@ -19,7 +19,7 @@ class TesteDado {
 			fail("Caiu em uma excecao quando nao devia");
 		}
 		
-		assertEquals(6, dado.getLados());
+		assertEquals(4, dado.getLados());
 	}
 	
 	@Test
