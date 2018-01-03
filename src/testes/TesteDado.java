@@ -43,6 +43,7 @@ class TesteDado {
 		for (int i = 0; i < 20; i++) {
 			int numero = dado.rolar();
 			assertTrue("Dado esta fora do limite: " + numero, 1 <= numero && numero <= 6);
+			assertEquals(dado.getValor(), numero);
 		}
 	}
 	
