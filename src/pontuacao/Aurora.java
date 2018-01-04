@@ -2,7 +2,7 @@ package pontuacao;
 
 import sistema.ConjuntoDeDados;
 
-public class Aurora extends Pontuacao {
+public class Aurora extends PontuacaoGrupos {
 
 	public Aurora() {
 		nome = "Aurora";
@@ -20,11 +20,7 @@ public class Aurora extends Pontuacao {
 	@Override
 	public boolean condicaoEValida(ConjuntoDeDados dados) {
 		int[] valores = dados.getValores();
-		int valor = valores[0];
-		for(int i = 1; i < valores.length; i++)
-			if (valores[i] != valor)
-				return false;
-		return true;
+		return entontraRepetidos(5, valores) != 0;
 	}
 
 }

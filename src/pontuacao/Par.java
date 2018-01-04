@@ -2,7 +2,7 @@ package pontuacao;
 
 import sistema.ConjuntoDeDados;
 
-public class Par extends Pontuacao {
+public class Par extends PontuacaoGrupos {
 
 	public Par() {
 		nome = "Par";
@@ -12,14 +12,12 @@ public class Par extends Pontuacao {
 
 	@Override
 	public int getPontuacao(ConjuntoDeDados dados) {
-		// TODO Auto-generated method stub
-		return 0;
+		return 2*entontraRepetidos(2, dados.getValores());
 	}
 
 	@Override
 	public boolean condicaoEValida(ConjuntoDeDados dados) {
-		// TODO Auto-generated method stub
-		return false;
+		return entontraRepetidos(2, dados.getValores()) != 0;
 	}
 
 }

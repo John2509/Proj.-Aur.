@@ -270,5 +270,149 @@ class TestePontuacao {
 		
 		assertEquals(15, resultado);
 	}
+	
+	@Test
+	void testeParCondicao() {
+		Par regra = new Par();
+		ConjuntoDeDados MockConjunto1 = Mockito.mock(ConjuntoDeDados.class);
+		ConjuntoDeDados MockConjunto2 = Mockito.mock(ConjuntoDeDados.class);
+		int[] valores1 = {6,1,2,6,4};
+		int[] valores2 = {1,3,4,5,2};
+		Mockito.when(MockConjunto1.getValores()).thenReturn(valores1);
+		Mockito.when(MockConjunto2.getValores()).thenReturn(valores2);
+		
+		boolean resultado1 = regra.condicaoEValida(MockConjunto1);
+		boolean resultado2 = regra.condicaoEValida(MockConjunto2);
+		
+		assertTrue(resultado1);
+		assertFalse(resultado2);
+	}
+	
+	@Test
+	void testeParPontuacao() {
+		Par regra = new Par();
+		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
+		int[] valores = {5,4,3,2,4};
+		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
+		
+		int resultado = regra.getPontuacao(MockConjunto);
+		
+		assertEquals(8, resultado);
+	}
+	
+	@Test
+	void testeDoisParesCondicao() {
+		DoisPares regra = new DoisPares();
+		ConjuntoDeDados MockConjunto1 = Mockito.mock(ConjuntoDeDados.class);
+		ConjuntoDeDados MockConjunto2 = Mockito.mock(ConjuntoDeDados.class);
+		int[] valores1 = {6,1,4,6,4};
+		int[] valores2 = {1,3,4,5,2};
+		Mockito.when(MockConjunto1.getValores()).thenReturn(valores1);
+		Mockito.when(MockConjunto2.getValores()).thenReturn(valores2);
+		
+		boolean resultado1 = regra.condicaoEValida(MockConjunto1);
+		boolean resultado2 = regra.condicaoEValida(MockConjunto2);
+		
+		assertTrue(resultado1);
+		assertFalse(resultado2);
+	}
+	
+	@Test
+	void testeDoisParesPontuacao() {
+		DoisPares regra = new DoisPares();
+		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
+		int[] valores = {5,4,3,3,4};
+		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
+		
+		int resultado = regra.getPontuacao(MockConjunto);
+		
+		assertEquals(14, resultado);
+	}
 
+	@Test
+	void testeTrioCondicao() {
+		Trio regra = new Trio();
+		ConjuntoDeDados MockConjunto1 = Mockito.mock(ConjuntoDeDados.class);
+		ConjuntoDeDados MockConjunto2 = Mockito.mock(ConjuntoDeDados.class);
+		int[] valores1 = {6,1,6,6,4};
+		int[] valores2 = {1,3,4,5,2};
+		Mockito.when(MockConjunto1.getValores()).thenReturn(valores1);
+		Mockito.when(MockConjunto2.getValores()).thenReturn(valores2);
+		
+		boolean resultado1 = regra.condicaoEValida(MockConjunto1);
+		boolean resultado2 = regra.condicaoEValida(MockConjunto2);
+		
+		assertTrue(resultado1);
+		assertFalse(resultado2);
+	}
+	
+	@Test
+	void testeTrioPontuacao() {
+		Trio regra = new Trio();
+		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
+		int[] valores = {3,4,3,3,1};
+		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
+		
+		int resultado = regra.getPontuacao(MockConjunto);
+		
+		assertEquals(9, resultado);
+	}
+	
+	@Test
+	void testeQuadraCondicao() {
+		Quadra regra = new Quadra();
+		ConjuntoDeDados MockConjunto1 = Mockito.mock(ConjuntoDeDados.class);
+		ConjuntoDeDados MockConjunto2 = Mockito.mock(ConjuntoDeDados.class);
+		int[] valores1 = {6,6,6,6,4};
+		int[] valores2 = {1,3,4,5,2};
+		Mockito.when(MockConjunto1.getValores()).thenReturn(valores1);
+		Mockito.when(MockConjunto2.getValores()).thenReturn(valores2);
+		
+		boolean resultado1 = regra.condicaoEValida(MockConjunto1);
+		boolean resultado2 = regra.condicaoEValida(MockConjunto2);
+		
+		assertTrue(resultado1);
+		assertFalse(resultado2);
+	}
+	
+	@Test
+	void testeQuadraPontuacao() {
+		Quadra regra = new Quadra();
+		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
+		int[] valores = {3,4,3,3,3};
+		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
+		
+		int resultado = regra.getPontuacao(MockConjunto);
+		
+		assertEquals(12, resultado);
+	}
+	
+	@Test
+	void testeFullHouseCondicao() {
+		FullHouse regra = new FullHouse();
+		ConjuntoDeDados MockConjunto1 = Mockito.mock(ConjuntoDeDados.class);
+		ConjuntoDeDados MockConjunto2 = Mockito.mock(ConjuntoDeDados.class);
+		int[] valores1 = {6,4,6,6,4};
+		int[] valores2 = {1,3,4,5,2};
+		Mockito.when(MockConjunto1.getValores()).thenReturn(valores1);
+		Mockito.when(MockConjunto2.getValores()).thenReturn(valores2);
+		
+		boolean resultado1 = regra.condicaoEValida(MockConjunto1);
+		boolean resultado2 = regra.condicaoEValida(MockConjunto2);
+		
+		assertTrue(resultado1);
+		assertFalse(resultado2);
+	}
+	
+	@Test
+	void testeFullHousePontuacao() {
+		FullHouse regra = new FullHouse();
+		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
+		int[] valores = {3,4,3,4,3};
+		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
+		
+		int resultado = regra.getPontuacao(MockConjunto);
+		
+		assertEquals(17, resultado);
+	}
 }
