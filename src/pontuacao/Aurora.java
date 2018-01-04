@@ -19,8 +19,7 @@ public class Aurora extends PontuacaoGrupos {
 
 	@Override
 	public boolean condicaoEValida(ConjuntoDeDados dados) {
-		int[] valores = dados.getValores();
-		return entontraRepetidos(5, valores) != 0;
+		return entontraRepetidos(5, dados.getValores(), dados.getNumeroDeLados()) != 0;
 	}
 
 }

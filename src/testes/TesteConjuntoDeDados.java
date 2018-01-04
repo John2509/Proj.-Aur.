@@ -28,7 +28,32 @@ class TesteConjuntoDeDados {
 			fail("Caiu em uma excecao quando nao devia");
 		}
 		
-		assertEquals(5, conjunto.tamanhoDoConjunto());
+		assertEquals(5, conjunto.getTamanhoDoConjunto());
+	}
+	
+	@Test
+	void deveriaCriarUmConjuntoComQuatroDadosDeSeisFaces() {
+		ArrayList<Dado> dados = new ArrayList<>();
+		for (int i = 0; i < 2 ; i++) {
+			dados.add(new Dado());
+		}
+		try {
+			dados.add(new Dado(3));
+		} catch (NumeroInvalidoException e1) {
+			fail("Caiu em uma excecao quando nao devia");
+		}
+		for (int i = 0; i < 2 ; i++) {
+			dados.add(new Dado());
+		}
+		ConjuntoDeDados conjunto = null;
+		try {
+			conjunto = new ConjuntoDeDados(dados);
+		} catch (TamanhoInvalidoException e) {
+			fail("Caiu em uma excecao quando nao devia");
+		}
+		
+		assertEquals(4, conjunto.getTamanhoDoConjunto());
+		assertEquals(6, conjunto.getNumeroDeLados());
 	}
 	
 	@Test

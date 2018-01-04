@@ -1,13 +1,12 @@
 package pontuacao;
 
 public abstract class PontuacaoGrupos extends Pontuacao{
-
-	private int lados = 6;
 	
 	//Encontra os numeros que repetem repeticoes e apenas repeticoes veses
 	//Retorna o maior numero que repete
 	//se nenhum repete, retorna 0
-	protected int entontraRepetidos(int repeticoes, int[] valores) {
+	//Lados é o numero de faces dos dados
+	protected int entontraRepetidos(int repeticoes, int[] valores, int lados) {
 		for (int i = lados; i >= 1; i--) {
 			int valor = encontrar(repeticoes, valores, i);
 			if (valor != 0)
@@ -20,7 +19,8 @@ public abstract class PontuacaoGrupos extends Pontuacao{
 	//Ele ignora o valor ignorar
 	//Retorna o maior numero que repete
 	//se nenhum repete, retorna 0
-	protected int entontraRepetidos(int repeticoes, int[] valores, int ignorar) {
+	//Lados é o numero de faces dos dados
+	protected int entontraRepetidos(int repeticoes, int[] valores, int lados, int ignorar) {
 		for (int i = lados; i >= 1; i--) {
 			if (i != ignorar) {
 				int valor = encontrar(repeticoes, valores, i);

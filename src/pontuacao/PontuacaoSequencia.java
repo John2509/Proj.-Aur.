@@ -5,8 +5,6 @@ import sistema.ConjuntoDeDados;
 public abstract class PontuacaoSequencia extends Pontuacao {
 
 	private int tamanho;
-	//Para esse codigo, supus que todos os dados tem 6 lados
-	private int lados = 6;
 	private boolean crescente = true;
 	private boolean decrescente = true;
 	
@@ -17,6 +15,7 @@ public abstract class PontuacaoSequencia extends Pontuacao {
 	@Override
 	public boolean condicaoEValida(ConjuntoDeDados dados) {
 		int[] valores = dados.getValores();
+		int lados = dados.getNumeroDeLados();
 		for (int i = 0; i + tamanho <= valores.length; i++) {
 			if (crescente) {
 				int valorInicial = 0;

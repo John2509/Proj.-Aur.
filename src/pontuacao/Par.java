@@ -12,12 +12,12 @@ public class Par extends PontuacaoGrupos {
 
 	@Override
 	public int getPontuacao(ConjuntoDeDados dados) {
-		return 2*entontraRepetidos(2, dados.getValores());
+		return 2*entontraRepetidos(2, dados.getValores(), dados.getNumeroDeLados());
 	}
 
 	@Override
 	public boolean condicaoEValida(ConjuntoDeDados dados) {
-		return entontraRepetidos(2, dados.getValores()) != 0;
+		return entontraRepetidos(2, dados.getValores(), dados.getNumeroDeLados()) != 0;
 	}
 
 }

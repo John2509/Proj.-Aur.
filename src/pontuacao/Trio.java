@@ -12,12 +12,12 @@ public class Trio extends PontuacaoGrupos {
 
 	@Override
 	public int getPontuacao(ConjuntoDeDados dados) {
-		return 3*entontraRepetidos(3, dados.getValores());
+		return 3*entontraRepetidos(3, dados.getValores(), dados.getNumeroDeLados());
 	}
 
 	@Override
 	public boolean condicaoEValida(ConjuntoDeDados dados) {
-		return entontraRepetidos(3, dados.getValores()) != 0;
+		return entontraRepetidos(3, dados.getValores(), dados.getNumeroDeLados()) != 0;
 	}
 
 }

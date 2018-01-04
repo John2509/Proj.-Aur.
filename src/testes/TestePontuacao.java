@@ -193,6 +193,8 @@ class TestePontuacao {
 		int[] valores2 = {1,1,1,1,2};
 		Mockito.when(MockConjunto1.getValores()).thenReturn(valores1);
 		Mockito.when(MockConjunto2.getValores()).thenReturn(valores2);
+		Mockito.when(MockConjunto1.getNumeroDeLados()).thenReturn(6);
+		Mockito.when(MockConjunto2.getNumeroDeLados()).thenReturn(6);
 		
 		boolean resultado1 = regra.condicaoEValida(MockConjunto1);
 		boolean resultado2 = regra.condicaoEValida(MockConjunto2);
@@ -207,6 +209,7 @@ class TestePontuacao {
 		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
 		int[] valores = {1,1,1,1,1};
 		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
+		Mockito.when(MockConjunto.getNumeroDeLados()).thenReturn(6);
 		
 		int resultado = regra.getPontuacao(MockConjunto);
 		
@@ -222,6 +225,8 @@ class TestePontuacao {
 		int[] valores2 = {1,1,1,1,2};
 		Mockito.when(MockConjunto1.getValores()).thenReturn(valores1);
 		Mockito.when(MockConjunto2.getValores()).thenReturn(valores2);
+		Mockito.when(MockConjunto1.getNumeroDeLados()).thenReturn(6);
+		Mockito.when(MockConjunto2.getNumeroDeLados()).thenReturn(6);
 		
 		boolean resultado1 = regra.condicaoEValida(MockConjunto1);
 		boolean resultado2 = regra.condicaoEValida(MockConjunto2);
@@ -236,6 +241,7 @@ class TestePontuacao {
 		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
 		int[] valores = {6,5,4,3,2};
 		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
+		Mockito.when(MockConjunto.getNumeroDeLados()).thenReturn(6);
 		
 		int resultado = regra.getPontuacao(MockConjunto);
 		
@@ -251,6 +257,8 @@ class TestePontuacao {
 		int[] valores2 = {1,1,1,1,2};
 		Mockito.when(MockConjunto1.getValores()).thenReturn(valores1);
 		Mockito.when(MockConjunto2.getValores()).thenReturn(valores2);
+		Mockito.when(MockConjunto1.getNumeroDeLados()).thenReturn(6);
+		Mockito.when(MockConjunto2.getNumeroDeLados()).thenReturn(6);
 		
 		boolean resultado1 = regra.condicaoEValida(MockConjunto1);
 		boolean resultado2 = regra.condicaoEValida(MockConjunto2);
@@ -265,6 +273,7 @@ class TestePontuacao {
 		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
 		int[] valores = {5,4,3,2,4};
 		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
+		Mockito.when(MockConjunto.getNumeroDeLados()).thenReturn(6);
 		
 		int resultado = regra.getPontuacao(MockConjunto);
 		
@@ -280,6 +289,8 @@ class TestePontuacao {
 		int[] valores2 = {1,3,4,5,2};
 		Mockito.when(MockConjunto1.getValores()).thenReturn(valores1);
 		Mockito.when(MockConjunto2.getValores()).thenReturn(valores2);
+		Mockito.when(MockConjunto1.getNumeroDeLados()).thenReturn(6);
+		Mockito.when(MockConjunto2.getNumeroDeLados()).thenReturn(6);
 		
 		boolean resultado1 = regra.condicaoEValida(MockConjunto1);
 		boolean resultado2 = regra.condicaoEValida(MockConjunto2);
@@ -294,6 +305,7 @@ class TestePontuacao {
 		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
 		int[] valores = {5,4,3,2,4};
 		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
+		Mockito.when(MockConjunto.getNumeroDeLados()).thenReturn(6);
 		
 		int resultado = regra.getPontuacao(MockConjunto);
 		
@@ -309,6 +321,8 @@ class TestePontuacao {
 		int[] valores2 = {1,3,4,5,2};
 		Mockito.when(MockConjunto1.getValores()).thenReturn(valores1);
 		Mockito.when(MockConjunto2.getValores()).thenReturn(valores2);
+		Mockito.when(MockConjunto1.getNumeroDeLados()).thenReturn(6);
+		Mockito.when(MockConjunto2.getNumeroDeLados()).thenReturn(6);
 		
 		boolean resultado1 = regra.condicaoEValida(MockConjunto1);
 		boolean resultado2 = regra.condicaoEValida(MockConjunto2);
@@ -323,6 +337,7 @@ class TestePontuacao {
 		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
 		int[] valores = {5,4,3,3,4};
 		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
+		Mockito.when(MockConjunto.getNumeroDeLados()).thenReturn(6);
 		
 		int resultado = regra.getPontuacao(MockConjunto);
 		
@@ -338,6 +353,8 @@ class TestePontuacao {
 		int[] valores2 = {1,3,4,5,2};
 		Mockito.when(MockConjunto1.getValores()).thenReturn(valores1);
 		Mockito.when(MockConjunto2.getValores()).thenReturn(valores2);
+		Mockito.when(MockConjunto1.getNumeroDeLados()).thenReturn(6);
+		Mockito.when(MockConjunto2.getNumeroDeLados()).thenReturn(6);
 		
 		boolean resultado1 = regra.condicaoEValida(MockConjunto1);
 		boolean resultado2 = regra.condicaoEValida(MockConjunto2);
@@ -352,6 +369,7 @@ class TestePontuacao {
 		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
 		int[] valores = {3,4,3,3,1};
 		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
+		Mockito.when(MockConjunto.getNumeroDeLados()).thenReturn(6);
 		
 		int resultado = regra.getPontuacao(MockConjunto);
 		
@@ -367,6 +385,8 @@ class TestePontuacao {
 		int[] valores2 = {1,3,4,5,2};
 		Mockito.when(MockConjunto1.getValores()).thenReturn(valores1);
 		Mockito.when(MockConjunto2.getValores()).thenReturn(valores2);
+		Mockito.when(MockConjunto1.getNumeroDeLados()).thenReturn(6);
+		Mockito.when(MockConjunto2.getNumeroDeLados()).thenReturn(6);
 		
 		boolean resultado1 = regra.condicaoEValida(MockConjunto1);
 		boolean resultado2 = regra.condicaoEValida(MockConjunto2);
@@ -381,6 +401,7 @@ class TestePontuacao {
 		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
 		int[] valores = {3,4,3,3,3};
 		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
+		Mockito.when(MockConjunto.getNumeroDeLados()).thenReturn(6);
 		
 		int resultado = regra.getPontuacao(MockConjunto);
 		
@@ -396,6 +417,8 @@ class TestePontuacao {
 		int[] valores2 = {1,3,4,5,2};
 		Mockito.when(MockConjunto1.getValores()).thenReturn(valores1);
 		Mockito.when(MockConjunto2.getValores()).thenReturn(valores2);
+		Mockito.when(MockConjunto1.getNumeroDeLados()).thenReturn(6);
+		Mockito.when(MockConjunto2.getNumeroDeLados()).thenReturn(6);
 		
 		boolean resultado1 = regra.condicaoEValida(MockConjunto1);
 		boolean resultado2 = regra.condicaoEValida(MockConjunto2);
@@ -410,6 +433,7 @@ class TestePontuacao {
 		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
 		int[] valores = {3,4,3,4,3};
 		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
+		Mockito.when(MockConjunto.getNumeroDeLados()).thenReturn(6);
 		
 		int resultado = regra.getPontuacao(MockConjunto);
 		

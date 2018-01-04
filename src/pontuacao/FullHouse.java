@@ -12,9 +12,8 @@ public class FullHouse extends PontuacaoGrupos {
 
 	@Override
 	public int getPontuacao(ConjuntoDeDados dados) {
-		int[] valores = dados.getValores();
-		int valor1 = entontraRepetidos(2, valores);
-		int valor2 = entontraRepetidos(3, valores);
+		int valor1 = entontraRepetidos(2, dados.getValores(), dados.getNumeroDeLados());
+		int valor2 = entontraRepetidos(3, dados.getValores(), dados.getNumeroDeLados());
 		if (valor1 == 0 || valor2 == 0)
 			return 0;
 		return 2*valor1 + 3*valor2;
@@ -22,8 +21,7 @@ public class FullHouse extends PontuacaoGrupos {
 
 	@Override
 	public boolean condicaoEValida(ConjuntoDeDados dados) {
-		int[] valores = dados.getValores();
-		return entontraRepetidos(2, valores) != 0 && entontraRepetidos(3, valores) != 0;
+		return entontraRepetidos(2, dados.getValores(), dados.getNumeroDeLados()) != 0 && entontraRepetidos(3, dados.getValores(), dados.getNumeroDeLados()) != 0;
 	}
 
 }

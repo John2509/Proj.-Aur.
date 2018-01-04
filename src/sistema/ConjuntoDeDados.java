@@ -7,18 +7,31 @@ import excecao.TamanhoInvalidoException;
 public class ConjuntoDeDados {
 	
 	ArrayList<Dado> dados;
+	int lados;
 
 	//Se o dados for vazio, uma exception é lancada
+	//Ele considera o primero dado para todos os numeros de lados
+	//Se um dado nao tem o numero certo de lados ele é descartado
 	public ConjuntoDeDados(ArrayList<Dado> dados) throws TamanhoInvalidoException {
 		if(dados.isEmpty()) {
 			throw new TamanhoInvalidoException();
 		}
-		this.dados = dados;
+		this.dados = new ArrayList<>();
+		lados = dados.get(0).getLados();
+		for (Dado dado : dados) {
+			if (dado.getLados() == lados)
+				this.dados.add(dado);
+		}
 	}
 
 	//Retorna a quantidade de dados
-	public int tamanhoDoConjunto() {
+	public int getTamanhoDoConjunto() {
 		return dados.size();
+	}
+	
+	//Retorna a quantidade de lados que cada dado tem
+	public int getNumeroDeLados() {
+		return lados;
 	}
 
 	//Retorna um array de int com os valores dos dados

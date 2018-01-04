@@ -12,12 +12,12 @@ public class Quadra extends PontuacaoGrupos {
 
 	@Override
 	public int getPontuacao(ConjuntoDeDados dados) {
-		return 4*entontraRepetidos(4, dados.getValores());
+		return 4*entontraRepetidos(4, dados.getValores(), dados.getNumeroDeLados());
 	}
 
 	@Override
 	public boolean condicaoEValida(ConjuntoDeDados dados) {
-		return entontraRepetidos(4, dados.getValores()) != 0;
+		return entontraRepetidos(4, dados.getValores(), dados.getNumeroDeLados()) != 0;
 	}
 
 }
