@@ -21,7 +21,7 @@ public class Dado {
 	}
 	
 	//Cria um dado de n lados, desde que n > 0
-	//No caso de n ser invalido, a excecao NumeroInvalidoException é lancada
+	//No caso de n ser invalido, a excecao NumeroInvalidoException eh lancada
 	public Dado(int lados) throws NumeroInvalidoException {
 		if (lados <= 0)
 			throw new NumeroInvalidoException();
@@ -47,7 +47,7 @@ public class Dado {
 	}
 
 	//Define um valor para o dado, desde que o valor seja valido (1 <= valor && valor <= lados)
-	//No caso do valor ser invalido, a excecao NumeroInvalidoException é lancada
+	//No caso do valor ser invalido, a excecao NumeroInvalidoException eh lancada
 	public void setValor(int valor) throws NumeroInvalidoException {
 		if (1 <= valor && valor <= lados)
 			this.valor = valor;

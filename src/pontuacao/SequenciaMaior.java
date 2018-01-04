@@ -7,7 +7,7 @@ public class SequenciaMaior extends PontuacaoSequencia {
 	public SequenciaMaior() {
 		super(5);
 		nome = "Sequencia Maior";
-		condicao = "Haver os 5 dados em ordem numérica no rolamento";
+		condicao = "Haver os 5 dados em ordem numerica no rolamento";
 		regra = "Pontue 20 pontos";
 	}
 

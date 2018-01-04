@@ -7,7 +7,7 @@ public class SequenciaMenor extends PontuacaoSequencia {
 	public SequenciaMenor() {
 		super(4);
 		nome = "Sequencia Menor";
-		condicao = "Haver pelo menos 4 dados em ordem numérica no rolamento"; 
+		condicao = "Haver pelo menos 4 dados em ordem numerica no rolamento"; 
 		regra = "Pontue 15 pontos";
 	}
 
