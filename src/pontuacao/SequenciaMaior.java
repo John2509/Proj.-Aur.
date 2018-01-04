@@ -2,9 +2,10 @@ package pontuacao;
 
 import sistema.ConjuntoDeDados;
 
-public class SequenciaMaior extends Pontuacao {
+public class SequenciaMaior extends PontuacaoSequencia {
 
 	public SequenciaMaior() {
+		super(5);
 		nome = "Sequencia Maior";
 		condicao = "Haver os 5 dados em ordem numérica no rolamento";
 		regra = "Pontue 20 pontos";
@@ -12,14 +13,9 @@ public class SequenciaMaior extends Pontuacao {
 
 	@Override
 	public int getPontuacao(ConjuntoDeDados dados) {
-		// TODO Auto-generated method stub
+		if (condicaoEValida(dados)) {
+			return 20;
+		}
 		return 0;
 	}
-
-	@Override
-	public boolean condicaoEValida(ConjuntoDeDados dados) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

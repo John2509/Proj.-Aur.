@@ -12,14 +12,19 @@ public class Aurora extends Pontuacao {
 
 	@Override
 	public int getPontuacao(ConjuntoDeDados dados) {
-		// TODO Auto-generated method stub
+		if (condicaoEValida(dados))
+			return 50;
 		return 0;
 	}
 
 	@Override
 	public boolean condicaoEValida(ConjuntoDeDados dados) {
-		// TODO Auto-generated method stub
-		return false;
+		int[] valores = dados.getValores();
+		int valor = valores[0];
+		for(int i = 1; i < valores.length; i++)
+			if (valores[i] != valor)
+				return false;
+		return true;
 	}
 
 }
