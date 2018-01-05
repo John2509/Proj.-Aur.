@@ -9,9 +9,9 @@ public class ConjuntoDeDados {
 	ArrayList<Dado> dados;
 	int lados;
 
-	//Se o dados for vazio, uma exception é lancada
+	//Se o dados for vazio, uma exception eh lancada
 	//Ele considera o primero dado para todos os numeros de lados
-	//Se um dado nao tem o numero certo de lados ele é descartado
+	//Se um dado nao tem o numero certo de lados ele eh descartado
 	public ConjuntoDeDados(ArrayList<Dado> dados) throws TamanhoInvalidoException {
 		if(dados.isEmpty()) {
 			throw new TamanhoInvalidoException();

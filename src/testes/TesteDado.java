@@ -23,7 +23,7 @@ class TesteDado {
 	}
 	
 	@Test
-	void nãoDeveriaCriarUmDadoDeMenosDoisLados() {
+	void naoDeveriaCriarUmDadoDeMenosDoisLados() {
 		Dado dado = null;
 		
 		try {

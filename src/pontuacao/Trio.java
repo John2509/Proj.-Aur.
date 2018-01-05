@@ -7,7 +7,7 @@ public class Trio extends PontuacaoGrupos {
 	public Trio() {
 		nome = "Trio";
 		condicao = "Haver pelo menos 3 dados de mesmo valor no rolamento";
-		regra = "Pontue a soma dos três dados de mesmo valor";
+		regra = "Pontue a soma dos tres dados de mesmo valor";
 	}
 
 	@Override

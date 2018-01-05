@@ -228,7 +228,7 @@ class TesteConjuntoDePontuacoes {
 	@Test 
 	void deveriaEncontrarARegraQueGeraMaisPontos() throws TamanhoInvalidoException {
 		ConjuntoDeDados MockConjunto = Mockito.mock(ConjuntoDeDados.class);
-		int[] valores = {2,1,6,3,6};
+		int[] valores = {1,1,1,1,1};
 		Mockito.when(MockConjunto.getValores()).thenReturn(valores);
 		Mockito.when(MockConjunto.getNumeroDeLados()).thenReturn(6);
 		ArrayList<Pontuacao> regras = new ArrayList<>();
@@ -238,11 +238,19 @@ class TesteConjuntoDePontuacoes {
 		regras.add(new Quatros());
 		regras.add(new Cincos());
 		regras.add(new Seis());
+		regras.add(new Par());
+		regras.add(new DoisPares());
+		regras.add(new Trio());
+		regras.add(new Quadra());
+		regras.add(new SequenciaMenor());
+		regras.add(new SequenciaMaior());
+		regras.add(new FullHouse());
+		regras.add(new Aurora());
 		ConjuntoDePontuacoes conjunto = new ConjuntoDePontuacoes(regras);
 		
 		Pontuacao resposta = conjunto.calcularMelhorRegra(MockConjunto);
 		
-		assertEquals(12, resposta.getPontuacao(MockConjunto));
+		assertEquals(50, resposta.getPontuacao(MockConjunto));
 	}
 	
 	@Test 
@@ -311,5 +319,21 @@ class TesteConjuntoDePontuacoes {
 		assertEquals(4, resposta);
 		assertEquals(0, conjunto.getNumeroDeRegrasAtivas());
 		assertEquals(6, conjunto.getNumeroDeRegrasNaoAtivas());
+	}
+	
+	@Test
+	void deveriaEncontrarUmaRegraAtivaPelaClasse() throws TamanhoInvalidoException {
+		ArrayList<Pontuacao> regras = new ArrayList<>();
+		regras.add(new Uns());
+		regras.add(new Dois());
+		regras.add(new Tres());
+		regras.add(new Quatros());
+		regras.add(new Cincos());
+		regras.add(new Seis());
+		ConjuntoDePontuacoes conjunto = new ConjuntoDePontuacoes(regras);
+		
+		Pontuacao resposta = conjunto.encontrarRegraPorNome("Tres");
+		
+		assertEquals(resposta.getClass(), Tres.class);
 	}
 }
