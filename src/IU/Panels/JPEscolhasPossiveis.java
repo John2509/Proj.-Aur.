@@ -5,6 +5,12 @@
  */
 package IU.Panels;
 
+import excecao.TamanhoInvalidoException;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import pontuacao.*;
+import sistema.*;
+
 /**
  *
  * @author jmarc
@@ -16,6 +22,34 @@ public class JPEscolhasPossiveis extends javax.swing.JPanel {
      */
     public JPEscolhasPossiveis() {
         initComponents();
+        ArrayList<Dado> listaDados = new ArrayList<>();
+        for (int i = 0; i < 5; i++){
+            listaDados.add(new Dado());
+        }
+        try {
+            dados = new ConjuntoDeDados(listaDados);
+        } catch (TamanhoInvalidoException ex) {
+        }
+        
+        ArrayList<Pontuacao> regras = new ArrayList<>();
+        regras.add(new Uns());
+       	regras.add(new Dois());
+	regras.add(new Tres());
+	regras.add(new Quatros());
+	regras.add(new Cincos());
+	regras.add(new Seis());
+	regras.add(new Par());
+	regras.add(new DoisPares());
+	regras.add(new Trio());
+	regras.add(new Quadra());
+	regras.add(new SequenciaMenor());
+	regras.add(new SequenciaMaior());
+	regras.add(new FullHouse());
+	regras.add(new Aurora());
+        try {
+            pontuacoes = new ConjuntoDePontuacoes(regras);
+        } catch (TamanhoInvalidoException ex) {
+        }
     }
 
     /**
@@ -27,6 +61,11 @@ public class JPEscolhasPossiveis extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jLabel3 = new javax.swing.JLabel();
+        jLabelPontuacaoCategoria = new javax.swing.JLabel();
+        jButtonCalcular = new javax.swing.JButton();
         jSpinnerDado1 = new javax.swing.JSpinner();
         jSpinnerDado2 = new javax.swing.JSpinner();
         jSpinnerDado3 = new javax.swing.JSpinner();
@@ -35,22 +74,63 @@ public class JPEscolhasPossiveis extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(400, 300));
 
+        listModel = new DefaultListModel();
+        jList1.setModel(listModel);
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jList1.setLayoutOrientation(javax.swing.JList.VERTICAL_WRAP);
+        jScrollPane1.setViewportView(jList1);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setText("Pontuacao Dessa Categoria:");
+
+        jLabelPontuacaoCategoria.setText(" ");
+
+        jButtonCalcular.setText("Calcular");
+        jButtonCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCalcularActionPerformed(evt);
+            }
+        });
+
+        jSpinnerDado1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+
+        jSpinnerDado2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+
+        jSpinnerDado3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+
+        jSpinnerDado4.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+
+        jSpinnerDado5.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSpinnerDado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jSpinnerDado2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jSpinnerDado3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jSpinnerDado4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jSpinnerDado5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonCalcular))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jSpinnerDado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jSpinnerDado2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jSpinnerDado3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jSpinnerDado4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jSpinnerDado5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabelPontuacaoCategoria)))
+                        .addGap(0, 2, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jSpinnerDado1, jSpinnerDado2, jSpinnerDado3, jSpinnerDado4, jSpinnerDado5});
@@ -65,16 +145,58 @@ public class JPEscolhasPossiveis extends javax.swing.JPanel {
                     .addComponent(jSpinnerDado3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSpinnerDado4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSpinnerDado5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(265, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelPontuacaoCategoria)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(jButtonCalcular)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
+        try {
+            jSpinnerDado1.commitEdit();
+            jSpinnerDado2.commitEdit();
+            jSpinnerDado3.commitEdit();
+            jSpinnerDado4.commitEdit();
+            jSpinnerDado5.commitEdit();
+        } catch ( java.text.ParseException e ) {
+        }
+        int[] valores = {(Integer) jSpinnerDado1.getValue(),
+            (Integer) jSpinnerDado2.getValue(),
+            (Integer) jSpinnerDado3.getValue(),
+            (Integer) jSpinnerDado4.getValue(),
+            (Integer) jSpinnerDado5.getValue()
+        };
+        dados.setValores(valores);
+        ArrayList<Pontuacao> validas = pontuacoes.encontrarRegrasQueGeramPontos(dados);
+        listModel.clear();
+        for (Pontuacao regra : validas){
+            listModel.addElement(regra.getNome());
+        }
+    }//GEN-LAST:event_jButtonCalcularActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCalcular;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelPontuacaoCategoria;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinnerDado1;
     private javax.swing.JSpinner jSpinnerDado2;
     private javax.swing.JSpinner jSpinnerDado3;
     private javax.swing.JSpinner jSpinnerDado4;
     private javax.swing.JSpinner jSpinnerDado5;
     // End of variables declaration//GEN-END:variables
+
+    //Declaration of personal variables
+    private ConjuntoDeDados dados;
+    private ConjuntoDePontuacoes pontuacoes;
+    private DefaultListModel<String> listModel;
+
 }
