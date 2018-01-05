@@ -7,26 +7,9 @@ package IU;
 
 import excecao.TamanhoInvalidoException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.JLabel;
-import javax.swing.JRadioButton;
-import pontuacao.Aurora;
-import pontuacao.Cincos;
-import pontuacao.Dois;
-import pontuacao.DoisPares;
-import pontuacao.FullHouse;
-import pontuacao.Par;
-import pontuacao.Pontuacao;
-import pontuacao.Quadra;
-import pontuacao.Quatros;
-import pontuacao.Seis;
-import pontuacao.SequenciaMaior;
-import pontuacao.SequenciaMenor;
-import pontuacao.Tres;
-import pontuacao.Trio;
-import pontuacao.Uns;
+import pontuacao.*;
 import sistema.ConjuntoDeDados;
 import sistema.ConjuntoDePontuacoes;
 import sistema.Dado;
@@ -474,6 +457,11 @@ public class JFJogo extends javax.swing.JFrame {
         });
 
         jButtonVoltar.setText("Voltar");
+        jButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -630,6 +618,11 @@ public class JFJogo extends javax.swing.JFrame {
         jButtonRolarActionPerformed(null);
     }//GEN-LAST:event_jButtonEscolherCategoriaActionPerformed
 
+    private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
+        this.setVisible(false);
+        new JFMenu().setVisible(true);
+    }//GEN-LAST:event_jButtonVoltarActionPerformed
+
     private void uptadeDetalhesDasRegras(Pontuacao regra){
         jLabelNome.setText(regra.getNome());
         jLabelCondicao.setText(regra.getCondicao());
@@ -638,41 +631,6 @@ public class JFJogo extends javax.swing.JFrame {
     
     private void uptadePontuacaoTotal(){
         jLabelPontucaoTotal.setText(pontuacaoTotal.toString());
-    }
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JFJogo().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

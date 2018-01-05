@@ -74,15 +74,15 @@ public class ConjuntoDePontuacoes {
 	//Retorna a melhor regra ativa para um conjunto de dados
 	public Pontuacao calcularMelhorRegra(ConjuntoDeDados dados) {
 		int maiorPontuacao = 0;
-		int index = 0;
+		Pontuacao melhorRegra = null;
 		for (Pontuacao regra : regrasAtivas) {
-			if(regra.getPontuacao(dados) > maiorPontuacao) {
-				index = regrasAtivas.indexOf(regra);
+			int pontuacaoParcial = regra.getPontuacao(dados);
+			if(pontuacaoParcial >= maiorPontuacao) {
+				melhorRegra = regra;
+				maiorPontuacao = pontuacaoParcial;
 			}
 		}
-		if (regrasAtivas.isEmpty())
-			return null;
-		return regrasAtivas.get(index);
+		return melhorRegra;
 	}
 
 	//Retorna todas as regras que nao tem pontucao 0 para um conjunto de dados
