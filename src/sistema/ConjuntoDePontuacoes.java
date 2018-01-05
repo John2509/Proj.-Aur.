@@ -17,12 +17,12 @@ public class ConjuntoDePontuacoes {
 			throw new TamanhoInvalidoException();
 		regrasAtivas = new ArrayList<>();
 		regrasNaoAtivas = new ArrayList<>();
-		for (Pontuacao regra : regras) {
-			if (regra.getAtivo())
-				regrasAtivas.add(regra);
-			else
-				regrasNaoAtivas.add(regra);
-		}
+                regras.forEach((regra) -> {
+                    if (regra.getAtivo())
+                        regrasAtivas.add(regra);
+                    else
+                        regrasNaoAtivas.add(regra);
+            });
 	}
 
 	//Regras ativas sao aquelas que o programa permite calcular
@@ -117,6 +117,15 @@ public class ConjuntoDePontuacoes {
 			res++;
 		}
 		return res;
+	}
+
+	//Retorna a primeira regra com o nome
+	public Pontuacao encontrarRegraPorNome(String nome) {
+		for (Pontuacao regra : regrasAtivas) {
+			if (regra.getNome().equals(nome))
+				return regra;
+		}
+		return null;
 	}
 
 }

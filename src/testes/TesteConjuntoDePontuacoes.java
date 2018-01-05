@@ -312,4 +312,20 @@ class TesteConjuntoDePontuacoes {
 		assertEquals(0, conjunto.getNumeroDeRegrasAtivas());
 		assertEquals(6, conjunto.getNumeroDeRegrasNaoAtivas());
 	}
+	
+	@Test
+	void deveriaEncontrarUmaRegraAtivaPelaClasse() throws TamanhoInvalidoException {
+		ArrayList<Pontuacao> regras = new ArrayList<>();
+		regras.add(new Uns());
+		regras.add(new Dois());
+		regras.add(new Tres());
+		regras.add(new Quatros());
+		regras.add(new Cincos());
+		regras.add(new Seis());
+		ConjuntoDePontuacoes conjunto = new ConjuntoDePontuacoes(regras);
+		
+		Pontuacao resposta = conjunto.encontrarRegraPorNome("Tres");
+		
+		assertEquals(resposta.getClass(), Tres.class);
+	}
 }
