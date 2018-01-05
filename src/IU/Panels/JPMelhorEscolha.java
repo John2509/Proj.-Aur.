@@ -74,23 +74,50 @@ public class JPMelhorEscolha extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(400, 300));
 
         jSpinnerDado1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado1StateChanged(evt);
+            }
+        });
 
         jSpinnerDado2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado2StateChanged(evt);
+            }
+        });
 
         jSpinnerDado3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado3.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado3StateChanged(evt);
+            }
+        });
 
         jSpinnerDado4.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado4.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado4StateChanged(evt);
+            }
+        });
 
         jSpinnerDado5.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado5.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado5StateChanged(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Melhor Escolha de Categoria:");
 
+        jLabelNomeCategoria.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelNomeCategoria.setText(" ");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Pontuacao Dessa Categoria:");
 
+        jLabelPontuacaoCategoria.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelPontuacaoCategoria.setText(" ");
 
         jButtonCalcular.setText("Calcular");
@@ -179,7 +206,31 @@ public class JPMelhorEscolha extends javax.swing.JPanel {
         jLabelPontuacaoCategoria.setText(pontuacao.toString());
     }//GEN-LAST:event_jButtonCalcularActionPerformed
 
+    private void jSpinnerDado1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado1StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado1StateChanged
 
+    private void jSpinnerDado2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado2StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado2StateChanged
+
+    private void jSpinnerDado3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado3StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado3StateChanged
+
+    private void jSpinnerDado4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado4StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado4StateChanged
+
+    private void jSpinnerDado5StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado5StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado5StateChanged
+
+    private void limpar(){
+        jLabelNomeCategoria.setText(" ");
+        jLabelPontuacaoCategoria.setText(" ");
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCalcular;
     private javax.swing.JLabel jLabel1;

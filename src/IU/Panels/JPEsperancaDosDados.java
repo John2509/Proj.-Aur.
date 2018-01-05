@@ -5,6 +5,12 @@
  */
 package IU.Panels;
 
+import excecao.TamanhoInvalidoException;
+import java.util.ArrayList;
+import javax.swing.JLabel;
+import pontuacao.*;
+import sistema.*;
+
 /**
  *
  * @author jmarc
@@ -16,6 +22,34 @@ public class JPEsperancaDosDados extends javax.swing.JPanel {
      */
     public JPEsperancaDosDados() {
         initComponents();
+        ArrayList<Dado> listaDados = new ArrayList<>();
+        for (int i = 0; i < 5; i++){
+            listaDados.add(new Dado());
+        }
+        try {
+            dados = new ConjuntoDeDados(listaDados);
+        } catch (TamanhoInvalidoException ex) {
+        }
+        
+        ArrayList<Pontuacao> regras = new ArrayList<>();
+        regras.add(new Uns());
+       	regras.add(new Dois());
+	regras.add(new Tres());
+	regras.add(new Quatros());
+	regras.add(new Cincos());
+	regras.add(new Seis());
+	regras.add(new Par());
+	regras.add(new DoisPares());
+	regras.add(new Trio());
+	regras.add(new Quadra());
+	regras.add(new SequenciaMenor());
+	regras.add(new SequenciaMaior());
+	regras.add(new FullHouse());
+	regras.add(new Aurora());
+        try {
+            pontuacoes = new ConjuntoDePontuacoes(regras);
+        } catch (TamanhoInvalidoException ex) {
+        }
     }
 
     /**
@@ -27,9 +61,168 @@ public class JPEsperancaDosDados extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSpinnerDado1 = new javax.swing.JSpinner();
+        jSpinnerDado2 = new javax.swing.JSpinner();
+        jSpinnerDado3 = new javax.swing.JSpinner();
+        jSpinnerDado4 = new javax.swing.JSpinner();
+        jButtonCalcular = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabelDadoCategoria1 = new javax.swing.JLabel();
+        jLabelDadoPontuacao1 = new javax.swing.JLabel();
+        jLabelDadoCategoria2 = new javax.swing.JLabel();
+        jLabelDadoPontuacao2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabelDadoCategoria3 = new javax.swing.JLabel();
+        jLabelDadoPontuacao3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabelDadoCategoria4 = new javax.swing.JLabel();
+        jLabelDadoPontuacao4 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabelDadoCategoria5 = new javax.swing.JLabel();
+        jLabelDadoPontuacao5 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabelDadoCategoria6 = new javax.swing.JLabel();
+        jLabelDadoPontuacao6 = new javax.swing.JLabel();
 
-        jLabel1.setText("jLabel1");
+        setPreferredSize(new java.awt.Dimension(400, 300));
+
+        jSpinnerDado1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado1StateChanged(evt);
+            }
+        });
+
+        jSpinnerDado2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado2StateChanged(evt);
+            }
+        });
+
+        jSpinnerDado3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado3.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado3StateChanged(evt);
+            }
+        });
+
+        jSpinnerDado4.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado4.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado4StateChanged(evt);
+            }
+        });
+
+        jButtonCalcular.setText("Calcular");
+        jButtonCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCalcularActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/dice-1-menor.png"))); // NOI18N
+        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/dice-2-menor.png"))); // NOI18N
+        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/dice-3-menor.png"))); // NOI18N
+        jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel4.setText("Categoria:");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel6.setText("Pontuacao:");
+
+        jLabelDadoCategoria1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelDadoCategoria1.setText(" ");
+
+        jLabelDadoPontuacao1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelDadoPontuacao1.setText(" ");
+
+        jLabelDadoCategoria2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelDadoCategoria2.setText(" ");
+
+        jLabelDadoPontuacao2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelDadoPontuacao2.setText(" ");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel7.setText("Pontuacao:");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel5.setText("Categoria:");
+
+        jLabelDadoCategoria3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelDadoCategoria3.setText(" ");
+
+        jLabelDadoPontuacao3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelDadoPontuacao3.setText(" ");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel8.setText("Pontuacao:");
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel9.setText("Categoria:");
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/dice-4-menor.png"))); // NOI18N
+        jLabel10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/dice-5-menor.png"))); // NOI18N
+        jLabel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/dice-6-menor.png"))); // NOI18N
+        jLabel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel13.setText("Categoria:");
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel14.setText("Pontuacao:");
+
+        jLabelDadoCategoria4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelDadoCategoria4.setText(" ");
+
+        jLabelDadoPontuacao4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelDadoPontuacao4.setText(" ");
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel15.setText("Categoria:");
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel16.setText("Pontuacao:");
+
+        jLabelDadoCategoria5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelDadoCategoria5.setText(" ");
+
+        jLabelDadoPontuacao5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelDadoPontuacao5.setText(" ");
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel17.setText("Categoria:");
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel18.setText("Pontuacao:");
+
+        jLabelDadoCategoria6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelDadoCategoria6.setText(" ");
+
+        jLabelDadoPontuacao6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelDadoPontuacao6.setText(" ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -37,20 +230,277 @@ public class JPEsperancaDosDados extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonCalcular))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabelDadoCategoria1))
+                                    .addComponent(jLabel4)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabelDadoPontuacao1))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabelDadoCategoria2))
+                                    .addComponent(jLabel5)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabelDadoPontuacao2))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabelDadoCategoria3))
+                                    .addComponent(jLabel9)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabelDadoPontuacao3))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jSpinnerDado1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jSpinnerDado2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabelDadoCategoria6))
+                                    .addComponent(jLabel17)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel18)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabelDadoPontuacao6))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabelDadoCategoria5))
+                                    .addComponent(jLabel15)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabelDadoPontuacao5))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabelDadoCategoria4))
+                                    .addComponent(jLabel13)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel14)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabelDadoPontuacao4))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jSpinnerDado3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jSpinnerDado4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 22, Short.MAX_VALUE)))
+                .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jSpinnerDado1, jSpinnerDado2, jSpinnerDado3, jSpinnerDado4});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(271, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSpinnerDado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinnerDado2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinnerDado3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinnerDado4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelDadoCategoria1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabelDadoPontuacao1)))
+                    .addComponent(jLabel10)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelDadoCategoria4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabelDadoPontuacao4))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelDadoCategoria2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabelDadoPontuacao2)))
+                    .addComponent(jLabel11)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelDadoCategoria5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabelDadoPontuacao5))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelDadoCategoria3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabelDadoPontuacao3)))
+                    .addComponent(jLabel12)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelDadoCategoria6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabelDadoPontuacao6))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonCalcular)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jSpinnerDado1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado1StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado1StateChanged
+
+    private void jSpinnerDado2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado2StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado2StateChanged
+
+    private void jSpinnerDado3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado3StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado3StateChanged
+
+    private void jSpinnerDado4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado4StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado4StateChanged
+
+    private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
+        try {
+            jSpinnerDado1.commitEdit();
+            jSpinnerDado2.commitEdit();
+            jSpinnerDado3.commitEdit();
+            jSpinnerDado4.commitEdit();
+        } catch ( java.text.ParseException e ) {
+        }
+        int[] valores = {(Integer) jSpinnerDado1.getValue(),
+                         (Integer) jSpinnerDado2.getValue(),
+                         (Integer) jSpinnerDado3.getValue(),
+                         (Integer) jSpinnerDado4.getValue(),
+        };
+        dados.setValores(valores);
+        
+        setLabels(1, jLabelDadoCategoria1, jLabelDadoPontuacao1);
+        setLabels(2, jLabelDadoCategoria2, jLabelDadoPontuacao2);
+        setLabels(3, jLabelDadoCategoria3, jLabelDadoPontuacao3);
+        setLabels(4, jLabelDadoCategoria4, jLabelDadoPontuacao4);
+        setLabels(5, jLabelDadoCategoria5, jLabelDadoPontuacao5);
+        setLabels(6, jLabelDadoCategoria6, jLabelDadoPontuacao6);
+    }//GEN-LAST:event_jButtonCalcularActionPerformed
+
+    private void limpar(){
+        jLabelDadoCategoria1.setText(" ");
+        jLabelDadoPontuacao1.setText(" ");
+        jLabelDadoCategoria2.setText(" ");
+        jLabelDadoPontuacao2.setText(" ");
+        jLabelDadoCategoria3.setText(" ");
+        jLabelDadoPontuacao3.setText(" ");
+        jLabelDadoCategoria4.setText(" ");
+        jLabelDadoPontuacao4.setText(" ");
+        jLabelDadoCategoria5.setText(" ");
+        jLabelDadoPontuacao5.setText(" ");
+        jLabelDadoCategoria6.setText(" ");
+        jLabelDadoPontuacao6.setText(" ");
+    }
+    
+    private void setLabels (int n, JLabel categoria, JLabel pontuacao){
+        dados.setValor(n, 4);
+        Pontuacao melhor = pontuacoes.calcularMelhorRegra(dados);
+        categoria.setText(melhor.getNome());
+        Integer valor = melhor.getPontuacao(dados);
+        pontuacao.setText(valor.toString());
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCalcular;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelDadoCategoria1;
+    private javax.swing.JLabel jLabelDadoCategoria2;
+    private javax.swing.JLabel jLabelDadoCategoria3;
+    private javax.swing.JLabel jLabelDadoCategoria4;
+    private javax.swing.JLabel jLabelDadoCategoria5;
+    private javax.swing.JLabel jLabelDadoCategoria6;
+    private javax.swing.JLabel jLabelDadoPontuacao1;
+    private javax.swing.JLabel jLabelDadoPontuacao2;
+    private javax.swing.JLabel jLabelDadoPontuacao3;
+    private javax.swing.JLabel jLabelDadoPontuacao4;
+    private javax.swing.JLabel jLabelDadoPontuacao5;
+    private javax.swing.JLabel jLabelDadoPontuacao6;
+    private javax.swing.JSpinner jSpinnerDado1;
+    private javax.swing.JSpinner jSpinnerDado2;
+    private javax.swing.JSpinner jSpinnerDado3;
+    private javax.swing.JSpinner jSpinnerDado4;
     // End of variables declaration//GEN-END:variables
+
+    //Declaration of personal variables
+    private ConjuntoDeDados dados;
+    private ConjuntoDePontuacoes pontuacoes;
+    
 }

@@ -77,12 +77,17 @@ public class JPEscolhasPossiveis extends javax.swing.JPanel {
         listModel = new DefaultListModel();
         jList1.setModel(listModel);
         jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jList1.setLayoutOrientation(javax.swing.JList.VERTICAL_WRAP);
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jList1);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Pontuacao Dessa Categoria:");
 
+        jLabelPontuacaoCategoria.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelPontuacaoCategoria.setText(" ");
 
         jButtonCalcular.setText("Calcular");
@@ -93,14 +98,46 @@ public class JPEscolhasPossiveis extends javax.swing.JPanel {
         });
 
         jSpinnerDado1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado1StateChanged(evt);
+            }
+        });
+        jSpinnerDado1.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                jSpinnerDado1InputMethodTextChanged(evt);
+            }
+        });
 
         jSpinnerDado2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado2StateChanged(evt);
+            }
+        });
 
         jSpinnerDado3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado3.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado3StateChanged(evt);
+            }
+        });
 
         jSpinnerDado4.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado4.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado4StateChanged(evt);
+            }
+        });
 
         jSpinnerDado5.setModel(new javax.swing.SpinnerNumberModel(1, 1, 6, 1));
+        jSpinnerDado5.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinnerDado5StateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -109,13 +146,12 @@ public class JPEscolhasPossiveis extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButtonCalcular))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
+                            .addComponent(jScrollPane1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButtonCalcular))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jSpinnerDado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -125,12 +161,16 @@ public class JPEscolhasPossiveis extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(jSpinnerDado4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jSpinnerDado5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jSpinnerDado5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addComponent(jLabelPontuacaoCategoria)))
-                        .addGap(0, 2, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jSpinnerDado1, jSpinnerDado2, jSpinnerDado3, jSpinnerDado4, jSpinnerDado5});
@@ -146,12 +186,12 @@ public class JPEscolhasPossiveis extends javax.swing.JPanel {
                     .addComponent(jSpinnerDado4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSpinnerDado5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelPontuacaoCategoria)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jButtonCalcular)
                 .addContainerGap())
         );
@@ -174,13 +214,49 @@ public class JPEscolhasPossiveis extends javax.swing.JPanel {
         };
         dados.setValores(valores);
         ArrayList<Pontuacao> validas = pontuacoes.encontrarRegrasQueGeramPontos(dados);
-        listModel.clear();
+        limpar();
         for (Pontuacao regra : validas){
             listModel.addElement(regra.getNome());
         }
     }//GEN-LAST:event_jButtonCalcularActionPerformed
 
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+        if (!jList1.isSelectionEmpty()){
+            Pontuacao regra = pontuacoes.encontrarRegraPorNome(jList1.getSelectedValue());
+            Integer pontuacao = regra.getPontuacao(dados);
+            jLabelPontuacaoCategoria.setText(pontuacao.toString());
+        }
+    }//GEN-LAST:event_jList1MouseClicked
 
+    private void jSpinnerDado1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jSpinnerDado1InputMethodTextChanged
+
+    }//GEN-LAST:event_jSpinnerDado1InputMethodTextChanged
+
+    private void jSpinnerDado1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado1StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado1StateChanged
+
+    private void jSpinnerDado2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado2StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado2StateChanged
+
+    private void jSpinnerDado3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado3StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado3StateChanged
+
+    private void jSpinnerDado4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado4StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado4StateChanged
+
+    private void jSpinnerDado5StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerDado5StateChanged
+        limpar();
+    }//GEN-LAST:event_jSpinnerDado5StateChanged
+
+    private void limpar() {
+        listModel.clear();
+        jLabelPontuacaoCategoria.setText(" ");
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCalcular;
     private javax.swing.JLabel jLabel3;
